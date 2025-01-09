@@ -1,6 +1,7 @@
 package ru.pojo;
 
 public class Book {
+
     private String name;
     private int page;
 

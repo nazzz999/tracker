@@ -6,12 +6,7 @@ public class Library {
         Book bookTwo = new Book("Спящая красавица", 134);
         Book bookThree = new Book("Гадкий утенок", 78);
         Book bookFour = new Book("Clean Code", 132);
-        Book[] books = new Book[4];
-        books[0] = bookOne;
-        books[1] = bookTwo;
-        books[2] = bookThree;
-        books[3] = bookFour;
-
+        Book[] books = new Book[]{bookOne, bookTwo, bookThree, bookFour};
         System.out.println("Список всех книг: ");
         for (int i = 0; i < books.length; i++) {
             Book book = books[i];
@@ -30,7 +25,7 @@ public class Library {
         System.out.println("Книга с названием Clean Code: ");
         for (int i = 0; i < books.length; i++) {
             Book book = books[i];
-            if (book.getName().equals("Clean Code")) {
+            if ("Clean Code".equals(book.getName())) {
                 System.out.println(book.getName() + " - " + book.getPage());
             }
         }
