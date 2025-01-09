@@ -1,11 +1,11 @@
 package ru.pojo;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Student {
     private String name;
-    private String grup;
-    private Date entrance;
+    private String group;
+    private LocalDate entrance;
 
     public String getName() {
         return name;
@@ -15,19 +15,19 @@ public class Student {
         this.name = name;
     }
 
-    public String getGrup() {
-        return grup;
+    public String getGroup() {
+        return group;
     }
 
-    public void setGrup(String grup) {
-        this.grup = grup;
+    public void setGroup(String group) {
+        this.group = group;
     }
 
-    public Date getEntrance() {
+    public LocalDate getEntrance() {
         return entrance;
     }
 
-    public void setEntrance(Date entrance) {
+    public void setEntrance(LocalDate entrance) {
         this.entrance = entrance;
     }
 }
