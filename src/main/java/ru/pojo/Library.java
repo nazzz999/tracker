@@ -6,7 +6,7 @@ public class Library {
         Book bookTwo = new Book("Спящая красавица", 134);
         Book bookThree = new Book("Гадкий утенок", 78);
         Book bookFour = new Book("Clean Code", 132);
-        Book[] books = new Book[]{bookOne, bookTwo, bookThree, bookFour};
+        Book[] books = {bookOne, bookTwo, bookThree, bookFour};
         System.out.println("Список всех книг: ");
         for (int i = 0; i < books.length; i++) {
             Book book = books[i];
