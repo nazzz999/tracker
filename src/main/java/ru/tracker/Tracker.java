@@ -38,7 +38,7 @@ public class Tracker {
     }
 
     public boolean replace(int id, Item item) {
-        if (indexOf(id) != -1) {
+        if (findById(id) != null) {
             item.setId(id);
             items[indexOf(id)] = item;
             return true;
@@ -56,5 +56,18 @@ public class Tracker {
             }
         }
         return rsl;
+    }
+
+    public void delete(int id) {
+        int index = indexOf(id);
+        if (index == -1) {
+            System.out.println("Элемент не найден");
+            return;
+        }
+        items[index] = null;
+        System.arraycopy(items, index + 1, items, index, size - index - 1);
+        items[size - 1] = null;
+        size--;
+        System.out.println(Arrays.toString(items));
     }
 }
