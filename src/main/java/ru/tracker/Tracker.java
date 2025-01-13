@@ -31,14 +31,16 @@ public class Tracker {
 
     public Item findById(int id) {
         Item rsl = null;
-        if (indexOf(id) != -1) {
-            rsl = items[indexOf(id)];
+        int index = indexOf(id);
+        if (index != -1) {
+            rsl = items[index];
         }
         return rsl;
     }
 
     public boolean replace(int id, Item item) {
-        if (findById(id) != null) {
+        int index = indexOf(id);
+        if (index != - 1) {
             item.setId(id);
             items[indexOf(id)] = item;
             return true;
@@ -60,14 +62,12 @@ public class Tracker {
 
     public void delete(int id) {
         int index = indexOf(id);
-        if (index == -1) {
-            System.out.println("Элемент не найден");
-            return;
+        if (index != -1) {
+            items[index] = null;
+            System.arraycopy(items, index + 1, items, index, size - index - 1);
+            items[size - 1] = null;
+            size--;
+            System.out.println(Arrays.toString(items));
         }
-        items[index] = null;
-        System.arraycopy(items, index + 1, items, index, size - index - 1);
-        items[size - 1] = null;
-        size--;
-        System.out.println(Arrays.toString(items));
     }
 }
