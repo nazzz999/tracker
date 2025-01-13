@@ -30,12 +30,8 @@ public class Tracker {
     }
 
     public Item findById(int id) {
-        Item rsl = null;
         int index = indexOf(id);
-        if (index != -1) {
-            rsl = items[index];
-        }
-        return rsl;
+        return (index != -1) ? items[index] : null;
     }
 
     public boolean replace(int id, Item item) {
