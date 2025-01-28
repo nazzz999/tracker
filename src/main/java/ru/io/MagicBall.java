@@ -17,4 +17,5 @@ public class MagicBall {
             System.out.println("Может быть");
         }
     }
+
 }
