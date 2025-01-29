@@ -19,11 +19,12 @@ public class StartUI {
             } else if (select == 1) {
                 System.out.println("=== Вывод всех заявок ===");
                 Item[] items = tracker.findAll();
-                if (items.length == 0) {
-                    System.out.println("Хранилище ещё не содержит заявок");
-                }
-                for (Item item : items) {
-                    System.out.println(item);
+                if (items.length > 0) {
+                    for (Item item : items) {
+                        System.out.println(item);
+                    }
+                } else {
+                    System.out.println("Хранилище еще не содержит заявок");
                 }
             } else if (select == 6) {
                 run = false;
