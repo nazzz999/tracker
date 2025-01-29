@@ -38,6 +38,15 @@ public class StartUI {
                 } else {
                     System.out.println("Ошибка! Введите правильный id");
                 }
+            } else if (select == 3) {
+                System.out.println("=== Удаление заявки ===");
+                System.out.print("Введите id заявки: ");
+                int id = Integer.parseInt(scanner.nextLine());
+                if (tracker.delete(id)) {
+                    System.out.println("Заявка " + id + " удалена");
+                } else {
+                    System.out.println("Заявка с id " + id + " не найдена");
+                }
             } else if (select == 6) {
                 run = false;
             }
