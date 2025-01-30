@@ -40,13 +40,24 @@ public class StartUI {
                 }
             } else if (select == 3) {
                 System.out.println("=== Удаление заявки ===");
-                System.out.print("Введите id заявки: ");
+                System.out.print("Введите id: ");
                 int id = Integer.parseInt(scanner.nextLine());
                 if (tracker.delete(id)) {
-                    System.out.println("Заявка " + id + " удалена");
+                    System.out.println("Заявка удалена успешно.");
                 } else {
-                    System.out.println("Заявка с id " + id + " не найдена");
+                    System.out.println("Ошибка удаления заявки.");
                 }
+            } else if (select == 4) {
+                System.out.println("=== Поиск заявки по id ===");
+                System.out.print("Введите id: ");
+                int id = Integer.parseInt(scanner.nextLine());
+                Item item = tracker.findById(id);
+                if (item != null) {
+                    System.out.println(item);
+                } else {
+                    System.out.println("Заявка с введенным id: " + id + " не найдена.");
+                }
+
             } else if (select == 6) {
                 run = false;
             }
