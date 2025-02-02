@@ -10,7 +10,7 @@ public class Bus implements Transport {
     public void drive() {
         if (currentFuel > 0) {
             System.out.println("Автобус едет с " + countPassengers + " пассажирами.");
-            currentFuel -= 1; // Уменьшаем количество топлива при движении
+            currentFuel -= 1;
         } else {
             System.out.println("Недостаточно топлива для движения!");
         }
