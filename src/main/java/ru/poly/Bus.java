@@ -1,6 +1,7 @@
 package ru.poly;
 
 public class Bus implements Transport {
+
     private int countPassengers;
     private final double fuelPricePerLiter = 58.0;
     private final double fuelCapacity = 100.0;
