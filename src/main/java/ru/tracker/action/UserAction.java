@@ -1,4 +1,4 @@
-package ru.action;
+package ru.tracker.action;
 
 import ru.tracker.Input;
 import ru.tracker.Tracker;

@@ -1,4 +1,4 @@
-package ru.action;
+package ru.tracker.action;
 
 import ru.tracker.*;
 
@@ -27,5 +27,4 @@ public class FindAll implements UserAction {
         }
         return true;
     }
-
 }

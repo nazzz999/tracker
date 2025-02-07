@@ -1,7 +1,7 @@
 package ru.tracker;
 
 import org.junit.jupiter.api.Test;
-import ru.action.*;
+import ru.tracker.action.*;
 
 import static org.assertj.core.api.Assertions.*;
 class StartUITest {
