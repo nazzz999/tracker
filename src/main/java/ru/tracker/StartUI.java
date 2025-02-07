@@ -1,5 +1,7 @@
 package ru.tracker;
 
+import ru.action.*;
+
 public class StartUI {
     private final Output output;
 
@@ -29,13 +31,13 @@ public class StartUI {
         Input input = new ConsoleInput();
         Tracker tracker = new Tracker();
         UserAction[] actions = {
-                new CreateAction(output),
-                new FindAllAction(output),
-                new ReplaceAction(output),
-                new DeleteAction(output),
-                new FindByIdAction(output),
-                new FindByNameAction(output),
-                new ExitAction(output)
+                new Create(output),
+                new FindAll(output),
+                new Replace(output),
+                new Delete(output),
+                new FindById(output),
+                new FindByName(output),
+                new Exit(output)
         };
         new StartUI(output).init(input, tracker, actions);
     }

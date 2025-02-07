@@ -1,4 +1,7 @@
-package ru.tracker;
+package ru.action;
+
+import ru.tracker.Input;
+import ru.tracker.Tracker;
 
 public interface UserAction {
     String name();

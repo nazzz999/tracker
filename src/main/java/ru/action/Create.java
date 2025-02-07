@@ -1,9 +1,11 @@
-package ru.tracker;
+package ru.action;
 
-public class CreateAction implements UserAction {
+import ru.tracker.*;
+
+public class Create implements UserAction {
     private final Output output;
 
-    public CreateAction(Output output) {
+    public Create(Output output) {
         this.output = output;
     }
 
