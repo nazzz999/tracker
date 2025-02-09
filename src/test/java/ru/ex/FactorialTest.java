@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 class FactorialTest {
 
     @Test
-    public void whenException() {
+    public void whenExceptionWithAnError() {
         IllegalArgumentException exception = assertThrows(
                 IllegalArgumentException.class,
                 () -> {
@@ -18,7 +18,7 @@ class FactorialTest {
     }
 
     @Test
-    public void whenException1() {
+    public void whenExceptionWithoutError() {
         int number = 3;
         int expected = 6;
         int result = Factorial.calc(number);
