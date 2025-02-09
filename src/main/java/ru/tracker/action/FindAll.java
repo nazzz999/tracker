@@ -1,6 +1,8 @@
 package ru.tracker.action;
 
 import ru.tracker.*;
+import ru.tracker.input.Input;
+import ru.tracker.output.Output;
 
 public class FindAll implements UserAction {
     private final Output output;

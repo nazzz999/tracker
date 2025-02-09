@@ -1,7 +1,7 @@
 package ru.tracker.action;
 
-import ru.tracker.Input;
-import ru.tracker.Output;
+import ru.tracker.input.Input;
+import ru.tracker.output.Output;
 import ru.tracker.Tracker;
 
 public class Exit implements UserAction {

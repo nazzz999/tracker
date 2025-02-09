@@ -1,4 +1,4 @@
-package ru.tracker;
+package ru.varargs;
 
 public class User {
     private int id;

@@ -1,6 +1,6 @@
 package ru.tracker.action;
 
-import ru.tracker.Input;
+import ru.tracker.input.Input;
 import ru.tracker.Tracker;
 
 public interface UserAction {

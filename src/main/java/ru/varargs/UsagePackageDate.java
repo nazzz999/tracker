@@ -1,4 +1,4 @@
-package ru.tracker;
+package ru.varargs;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;

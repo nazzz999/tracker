@@ -2,6 +2,10 @@ package ru.tracker;
 
 import org.junit.jupiter.api.Test;
 import ru.tracker.action.*;
+import ru.tracker.input.Input;
+import ru.tracker.input.MockInput;
+import ru.tracker.output.MockOutput;
+import ru.tracker.output.Output;
 
 import static org.assertj.core.api.Assertions.*;
 class StartUITest {
