@@ -16,3 +16,4 @@ public class ValidateInput extends ConsoleInput {
         return value;
     }
 }
+
