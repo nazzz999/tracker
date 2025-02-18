@@ -16,14 +16,17 @@ public class PasswordValidator {
         boolean containsDigit = false;
         boolean containsSpecialCharacter = false;
 
-        for (char c : password.toCharArray()) {
-            if (Character.isUpperCase(c)) {
+        for (char symbol : password.toCharArray()) {
+            if (containsUpperCase && containsDigit && containsLowerCase && containsSpecialCharacter) {
+                break;
+            }
+            if (Character.isUpperCase(symbol)) {
                 containsUpperCase = true;
-            } else if (Character.isLowerCase(c)) {
+            } else if (Character.isLowerCase(symbol)) {
                 containsLowerCase = true;
-            } else if (Character.isDigit(c)) {
+            } else if (Character.isDigit(symbol)) {
                 containsDigit = true;
-            } else {
+            } else if (!Character.isLetterOrDigit(symbol)) {
                 containsSpecialCharacter = true;
             }
         }
