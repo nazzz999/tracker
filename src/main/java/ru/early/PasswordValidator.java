@@ -72,7 +72,7 @@ public class PasswordValidator {
             String lowerCasePassword = password.toLowerCase();
             for (String forbidden : FORBIDDEN) {
                 if (lowerCasePassword.contains(forbidden)) {
-                    return true; // Найдена запрещенная подстрока
+                    return true;
                 }
 
             }
