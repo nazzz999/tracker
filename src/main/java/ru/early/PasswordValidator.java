@@ -10,72 +10,45 @@ public class PasswordValidator {
         if (password.length() < 8 || password.length() > 32) {
             throw new IllegalArgumentException("Password should be length [8, 32]");
         }
-        if (!containsUpperCase(password)) {
+
+        boolean containsUpperCase = false;
+        boolean containsLowerCase = false;
+        boolean containsDigit = false;
+        boolean containsSpecialCharacter = false;
+
+        for (char c : password.toCharArray()) {
+            if (Character.isUpperCase(c)) {
+                containsUpperCase = true;
+            } else if (Character.isLowerCase(c)) {
+                containsLowerCase = true;
+            } else if (Character.isDigit(c)) {
+                containsDigit = true;
+            } else {
+                containsSpecialCharacter = true;
+            }
+        }
+        if (!containsUpperCase) {
             throw new IllegalArgumentException("Password should contain at least one uppercase letter");
         }
 
-        if (!containsLowerCase(password)) {
+        if (!containsLowerCase) {
             throw new IllegalArgumentException("Password should contain at least one lowercase letter");
         }
 
-        if (!containsDigit(password)) {
+        if (!containsDigit) {
             throw new IllegalArgumentException("Password should contain at least one figure");
         }
 
-        if (!containsSpecialCharacter(password)) {
+        if (!containsSpecialCharacter) {
             throw new IllegalArgumentException("Password should contain at least one special symbol");
         }
+        String lowerCasePassword = password.toLowerCase();
 
-        if (containsForbiddenSubstring(password)) {
-            throw new IllegalArgumentException("Password shouldn't contain substrings: qwerty, 12345, password, admin, user");
+        for (String forbidden : FORBIDDEN) {
+            if (lowerCasePassword.contains(forbidden)) {
+                throw new IllegalArgumentException("Password shouldn't contain substrings: qwerty, 12345, password, admin, user");
+            }
         }
-    return password;
+        return password;
     }
-
-        private static boolean containsUpperCase(String password) {
-            for (char c : password.toCharArray()) {
-                if (Character.isUpperCase(c)) {
-                    return true;
-                }
-            }
-            return false;
-        }
-
-        private static boolean containsLowerCase(String password) {
-            for (char c : password.toCharArray()) {
-                if (Character.isLowerCase(c)) {
-                    return true;
-                }
-            }
-            return false;
-        }
-
-        private static boolean containsDigit(String password) {
-            for (char c : password.toCharArray()) {
-                if (Character.isDigit(c)) {
-                    return true;
-                }
-            }
-            return false;
-        }
-
-        private static boolean containsSpecialCharacter(String password) {
-            for (char c : password.toCharArray()) {
-                if (!Character.isLetterOrDigit(c)) {
-                    return true;
-                }
-            }
-            return false;
-        }
-
-        private static boolean containsForbiddenSubstring(String password) {
-            String lowerCasePassword = password.toLowerCase();
-            for (String forbidden : FORBIDDEN) {
-                if (lowerCasePassword.contains(forbidden)) {
-                    return true;
-                }
-
-            }
-            return false;
-        }
 }
