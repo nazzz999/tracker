@@ -78,5 +78,4 @@ public class PasswordValidator {
             }
             return false;
         }
-
 }
