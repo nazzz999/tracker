@@ -44,7 +44,7 @@ public class Tracker {
         return false;
     }
 
-    private int indexOf(int id) {
+    int indexOf(int id) {
         int rsl = -1;
         for (int index = 0; index < size; index++) {
             Item item = items[index];
