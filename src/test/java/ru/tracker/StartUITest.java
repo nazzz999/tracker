@@ -274,7 +274,7 @@ class StartUITest {
         );
     }
 
-   /* @Test
+    @Test
     void whenInvalidExit() {
         Output output = new MockOutput();
         Input input = new MockInput(
@@ -294,5 +294,5 @@ class StartUITest {
                         + "0. Завершить программу" + ln
                         + "=== Завершение программы ===" + ln
         );
-    } */
+    }
 }
