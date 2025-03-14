@@ -4,9 +4,6 @@ import java.util.*;
 
 public class AnalyzeByMap {
     public static double averageScore(List<Pupil> pupils) {
-        if (pupils.isEmpty()) {
-            return 0D;
-        }
         double totalScore = 0;
         int totalSubject = 0;
         for (Pupil pupil : pupils) {
@@ -18,13 +15,18 @@ public class AnalyzeByMap {
         return totalSubject == 0 ? 0D : totalScore / totalSubject;
     }
 
+    private static int calculateTotalScore(Pupil pupil) {
+        int totalScore = 0;
+        for (Subject subject : pupil.subjects()) {
+            totalScore += subject.score();
+        }
+        return totalScore;
+    }
+
     public static List<Label> averageScoreByPupil(List<Pupil> pupils) {
         List<Label> labels = new ArrayList<>();
         for (Pupil pupil : pupils) {
-            int totalScore = 0;
-            for (Subject subject : pupil.subjects()) {
-                totalScore += subject.score();
-            }
+            int totalScore = calculateTotalScore(pupil);
             double averageScore = (double) totalScore / pupil.subjects().size();
             labels.add(new Label(pupil.name(), averageScore));
         }
@@ -51,10 +53,7 @@ public class AnalyzeByMap {
     public static Label bestStudent(List<Pupil> pupils) {
         List<Label> labels = new ArrayList<>();
         for (Pupil pupil : pupils) {
-            int totalScore = 0;
-            for (Subject subject : pupil.subjects()) {
-                totalScore += subject.score();
-            }
+            int totalScore = calculateTotalScore(pupil);
             labels.add(new Label(pupil.name(), totalScore));
         }
         labels.sort(Comparator.naturalOrder());
