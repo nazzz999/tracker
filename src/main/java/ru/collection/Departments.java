@@ -17,7 +17,7 @@ public class Departments {
                 allDepartments.add(currentDepartment.toString());
             }
         }
-        return new ArrayList<>(allDepartments); // Преобразуем Set в List
+        return new ArrayList<>(allDepartments);
     }
 
     public static void sortAsc(List<String> departments) {
