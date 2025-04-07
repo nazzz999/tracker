@@ -1,7 +1,7 @@
 package ru.inheritance;
 
 public class Animal {
-    public void instanceInvoke() {
+    protected void instanceInvoke() {
         System.out.println("Вызов метода экземпляра Animal");
     }
 

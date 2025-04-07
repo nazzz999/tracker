@@ -15,14 +15,6 @@ public class AnalyzeByMap {
         return totalSubject == 0 ? 0D : totalScore / totalSubject;
     }
 
-    private static int calculateTotalScore(Pupil pupil) {
-        int totalScore = 0;
-        for (Subject subject : pupil.subjects()) {
-            totalScore += subject.score();
-        }
-        return totalScore;
-    }
-
     public static List<Label> averageScoreByPupil(List<Pupil> pupils) {
         List<Label> labels = new ArrayList<>();
         for (Pupil pupil : pupils) {
@@ -74,5 +66,12 @@ public class AnalyzeByMap {
         labels.sort(Comparator.naturalOrder());
         return labels.get(labels.size() - 1);
     }
-}
 
+    private static int calculateTotalScore(Pupil pupil) {
+        int totalScore = 0;
+        for (Subject subject : pupil.subjects()) {
+            totalScore += subject.score();
+        }
+        return totalScore;
+    }
+}
